@@ -1,4 +1,9 @@
 tasks:
     default:
         links:
+            - [".bashrc"]
+            - [".bash_aliases"]
+            - [".gitconfig"]
+            - [".gitignore"]
+            - [".profile"]
               
