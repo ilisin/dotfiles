@@ -10,6 +10,8 @@ tasks:
         links:
             - [".gitconfig", "mac/.gitconfig"]
             - [".gitignore"]
+            - [".vimrc.before.local", "mac/.vimrc.before.local"]
+            - [".vimrc.local", "mac/.vimrc.local"]
     unknow:
         cmds:
             - ["echo", "can't install dotfile in unknow OS."]

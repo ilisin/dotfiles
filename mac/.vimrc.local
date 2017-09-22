@@ -1,3 +1,6 @@
+" my vimrc setting
+"
+
 colorscheme gruvbox
 
 set nospell
