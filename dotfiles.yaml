@@ -12,6 +12,7 @@ tasks:
             - [".gitignore"]
             - [".vimrc.before.local", "mac/.vimrc.before.local"]
             - [".vimrc.local", "mac/.vimrc.local"]
+            - [".zshrc", "mac/.zshrc"]
     unknow:
         cmds:
             - ["echo", "can't install dotfile in unknow OS."]
