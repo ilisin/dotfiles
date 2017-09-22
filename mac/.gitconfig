@@ -1,0 +1,49 @@
+[user]
+    email = rnyo2189@cchntek.com
+    name = nyo
+
+[core]
+    editor = vim
+    quotepath = false
+    autocrlf = input
+    excludesfile = ~/.gitignore
+
+[merge]
+    tool = vimdiff
+    log = true
+    summary = true
+
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    log = auto
+    status = auto
+    ui = auto
+    pager = true
+
+[alias]
+    lga = log --graph --pretty=format:'%Cred%h %C(bold blue)<%an>%Creset %s %C(yellow)%d %Cgreen(%cr) %Cblue(%cd)%Creset' --abbrev-commit --all
+    lg = log --graph --pretty=format:'%Cred%h %C(bold blue)<%an>%Creset %s %C(yellow)%d %Cgreen(%cr) %Cblue(%cd)%Creset' --abbrev-commit
+    lg-nc = log --graph --pretty=format:'%h <%an>% %s %d (%cr) (%cd)' --abbrev-commit
+    l5 = log --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --since=5day
+    sf = show --pretty=\"format:\" --name-only
+
+    pl-fo = pull --ff-only
+    mg-nf = merge --no-ff
+    st = status
+    ci = commit
+    c = commit
+    up = pull -p
+
+[log]
+    date = local
+
+[branch]
+    autosetuprebase = always
+
+[diff]
+    algorithm = patience
+
+[push]
+    default = simple

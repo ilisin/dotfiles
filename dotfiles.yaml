@@ -6,4 +6,10 @@ tasks:
             - [".gitconfig"]
             - [".gitignore"]
             - [".profile"]
-              
+    Mac:
+        links:
+            - [".gitconfig", "mac/.gitconfig"]
+            - [".gitignore"]
+    unknow:
+        cmds:
+            - ["echo", "can't install dotfile in unknow OS."]
