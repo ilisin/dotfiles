@@ -1,0 +1,2 @@
+" remove problem bundle
+UnBundle 'amirh/HTML-AutoCloseTag'

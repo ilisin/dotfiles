@@ -1,0 +1,8 @@
+" my vimrc setting
+"
+
+colorscheme gruvbox
+
+set nospell
+
+inoremap <expr><CR> neosnippet#expandable() ? neosnippet#mappings#expand_or_jump_impl() : pumvisible() ? neocomplete#close_popup() : "\<CR>"
