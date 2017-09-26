@@ -4,9 +4,13 @@ tasks:
             - [".vimrc.before.local", "vim/.vimrc.before.local"]
             - [".vimrc.bundles.local", "vim/.vimrc.bundles.local"]
             - [".vimrc.local", "vim/.vimrc.local"]
+    zsh:
+        links:
+            - [".zshrc", "zsh/.zshrc"]
     Linux:
         deps:
             - vim
+            - zsh
         links:
             - [".bashrc"]
             - [".bash_aliases"]
