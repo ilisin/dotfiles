@@ -20,10 +20,10 @@ tasks:
     Mac:
         deps:
             - vim
+            - zsh
         links:
             - [".gitconfig", "mac/.gitconfig"]
             - [".gitignore"]
-            - [".zshrc", "mac/.zshrc"]
     unknow:
         cmds:
             - ["echo", "can't install dotfile in unknow OS."]
