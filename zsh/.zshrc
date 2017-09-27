@@ -26,7 +26,7 @@ ZSH_THEME="bira"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -51,7 +51,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git go)
+plugins=(git go laravel5)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,5 +84,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# colors
+[[ "$TERM" == "xterm"  ]] && export TERM=xterm-256color
+
 export GOPATH="$HOME/go_work"
 export PATH="$GOPATH/bin:$PATH"
+
+# set composer env
+if [ -d "$HOME/.config/composer/vendor/bin/" ]; then
+    export PATH=$PATH:$HOME/.config/composer/vendor/bin/
+fi
+
+# load aliases
+source $HOME/.zsh_aliases
+

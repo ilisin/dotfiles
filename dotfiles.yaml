@@ -7,6 +7,7 @@ tasks:
     zsh:
         links:
             - [".zshrc", "zsh/.zshrc"]
+            - [".zsh_aliases", "zsh/.zsh_aliases"]
     Linux:
         deps:
             - vim
