@@ -8,10 +8,14 @@ tasks:
         links:
             - [".zshrc", "zsh/.zshrc"]
             - [".zsh_aliases", "zsh/.zsh_aliases"]
+    tmux:
+        links:
+            - [".tmux.conf", ".tmux.conf"]
     Linux:
         deps:
             - vim
             - zsh
+            - tmux
         links:
             - [".bashrc"]
             - [".bash_aliases"]
