@@ -13,6 +13,7 @@ node_g
 /.project
 /.cproject
 /.idea
+/.DS_Store
 
 public/docs/
 
