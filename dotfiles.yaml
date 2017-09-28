@@ -26,6 +26,7 @@ tasks:
         deps:
             - vim
             - zsh
+            - tmux
         links:
             - [".gitconfig", "mac/.gitconfig"]
             - [".gitignore"]
