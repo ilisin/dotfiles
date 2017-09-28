@@ -95,6 +95,10 @@ if [ -d "$HOME/.config/composer/vendor/bin/" ]; then
     export PATH=$PATH:$HOME/.config/composer/vendor/bin/
 fi
 
+# set nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # load aliases
 source $HOME/.zsh_aliases
 
