@@ -10,7 +10,7 @@ tasks:
             - [".zsh_aliases", "zsh/.zsh_aliases"]
     tmux:
         links:
-            - [".tmux.conf", ".tmux.conf"]
+            - [".tmux.conf", "tmux/tmux.conf"]
     Linux:
         deps:
             - vim
