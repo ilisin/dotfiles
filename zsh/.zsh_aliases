@@ -1,5 +1,5 @@
 # myip
-alias myip='wget -qO- ifconfig.co'
+alias myip='curl ifconfig.co'
 
 # go back x directories
 b() {
