@@ -87,8 +87,15 @@ source $ZSH/oh-my-zsh.sh
 # colors
 [[ "$TERM" == "xterm"  ]] && export TERM=xterm-256color
 
-export GOPATH="$HOME/go_work"
-export PATH="$GOPATH/bin:$PATH"
+# set golang env
+if [ -d "$HOME/go/" ]; then
+    export GOROOT="$HOME/go"
+    export PATH="$PATH:$GOROOT/bin"
+fi
+if [ -d "$HOME/go_work/" ]; then
+    export GOPATH="$HOME/go_work"
+    export PATH="$GOPATH/bin:$PATH"
+fi
 
 # set composer env
 if [ -d "$HOME/.config/composer/vendor/bin/" ]; then
