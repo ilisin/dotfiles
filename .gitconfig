@@ -35,6 +35,7 @@
     ci = commit
     c = commit
     up = pull -p
+    ck = checkout
 
 [log]
     date = local
