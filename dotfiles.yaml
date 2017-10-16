@@ -12,15 +12,19 @@ tasks:
     tmux:
         links:
             - [".tmux.conf", "tmux/tmux.conf"]
+    git:
+        links:
+            - ["git/gitconfig, .gitconfig"]
+            - ["git/gitconfig.local, .gitconfig.local"]
     Linux:
         deps:
             - vim
             - zsh
+            - git
             - tmux
         links:
             - [".bashrc"]
             - [".bash_aliases"]
-            - [".gitconfig"]
             - [".gitignore"]
             - [".profile"]
     Mac:
