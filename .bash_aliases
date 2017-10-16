@@ -36,9 +36,3 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
-
-# show date of a week
-show-date() {
-    MYLIST=("next sun" "next sat" " next fri" "next thu" "next wed" "next tue" "next mon");
-    for i in 0 1 2 3 4 5 6; do date -d "${MYLIST[$i]}" +"%F %a"; done;
-}
