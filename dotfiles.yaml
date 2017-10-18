@@ -14,7 +14,8 @@ tasks:
             - [".tmux.conf", "tmux/tmux.conf"]
     git:
         links:
-            - ["git/gitconfig, .gitconfig"]
+            - [".gitconfig", "git/gitconfig"]
+            - [".gitignore", "git/gitignore"]
     Linux:
         deps:
             - vim
@@ -30,10 +31,10 @@ tasks:
         deps:
             - vim
             - zsh
+            - git
             - tmux
         links:
-            - [".gitconfig", "mac/.gitconfig"]
-            - [".gitignore"]
+            - [".gitconfig.local", "mac/gitconfig.local"]
     unknow:
         cmds:
             - ["echo", "can't install dotfile in unknow OS."]

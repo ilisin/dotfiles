@@ -1,0 +1,5 @@
+# vim: set ft=gitconfig:
+
+[user]
+	name = nyo
+    email = rnyo2189@cchntek.com
