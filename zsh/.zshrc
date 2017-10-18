@@ -111,3 +111,5 @@ export NVM_DIR="$HOME/.nvm"
 # load aliases
 source $HOME/.zsh_aliases
 
+# print system info
+command -v neofetch &> /dev/null && neofetch
