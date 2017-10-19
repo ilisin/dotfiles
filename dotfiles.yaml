@@ -16,12 +16,16 @@ tasks:
         links:
             - [".gitconfig", "git/gitconfig"]
             - [".gitignore", "git/gitignore"]
+    neofetch:
+        links:
+            - [".config/neofetch/config.conf", "neofetch/config.conf"]
     Linux:
         deps:
             - vim
             - zsh
             - git
             - tmux
+            - neofetch
         links:
             - [".bashrc"]
             - [".bash_aliases"]
