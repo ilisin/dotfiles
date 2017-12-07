@@ -6,3 +6,6 @@ colorscheme gruvbox
 set nospell
 
 inoremap <expr><CR> neosnippet#expandable() ? neosnippet#mappings#expand_or_jump_impl() : pumvisible() ? neocomplete#close_popup() : "\<CR>"
+
+" active syntastic for golang
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }
