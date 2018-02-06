@@ -39,6 +39,7 @@ tasks:
             - tmux
         links:
             - [".gitconfig.local", "mac/gitconfig.local"]
+            - ["Library/Application Support/Code/User/settings.json", "vscode/settings.json"]
     unknow:
         cmds:
             - ["echo", "can't install dotfile in unknow OS."]
