@@ -10,6 +10,14 @@ inoremap <expr><CR> neosnippet#expandable() ? neosnippet#mappings#expand_or_jump
 " active syntastic for golang
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['go'] }
 
+" vim-go
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+
 " airline customizations
 if !exists('g:airline_powerline_fonts')
     " Use the default set of separators with a few customizations
