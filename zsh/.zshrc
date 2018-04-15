@@ -53,7 +53,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker git go laravel5 yarn)
+plugins=(docker git go laravel5 thefuck yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,3 +118,5 @@ source $HOME/.zsh_aliases
 
 # print system info
 command -v neofetch &> /dev/null && neofetch
+
+eval $(thefuck --alias)
