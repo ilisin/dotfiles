@@ -4,15 +4,36 @@ My dotfiles.
 
 ---
 
-# Install
+## Prepare Install
 
-request:
-1. git, go
-2. `git clone git@github.com:nyogjtrc/dotfiles.git .dotfiles`
-3. [Homemaker](https://github.com/FooSoft/homemaker)
+```
+sudo apt update
+sudo apt install -y git
+```
 
-install cmd:
+via ssh:
+```
+git clone git@github.com:nyogjtrc/dotfiles.git .dotfiles
+cd .dotfiles
+```
 
-```shell
+via https:
+```
+git clone https://github.com/nyogjtrc/dotfiles.git .dotfiles
+cd .dotfiles
+```
+
+```
+./pre_install.sh
+```
+
+## Install
+
+```
 ./install
 ```
+
+## What's inside?
+
+- configuration management: [Homemaker](//github.com/FooSoft/homemaker)
+- vimrc

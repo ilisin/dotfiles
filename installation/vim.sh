@@ -1,4 +1,4 @@
-
+#!/bin/bash
 # vim
 
 sudo apt install vim-nox ctags
