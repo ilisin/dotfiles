@@ -1,7 +1,0 @@
-" remove problem bundle
-UnBundle 'amirh/HTML-AutoCloseTag'
-
-"
-Bundle "christoomey/vim-tmux-navigator"
-Bundle "benmills/vimux"
-Bundle "benmills/vimux-golang"

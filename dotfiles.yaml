@@ -1,9 +1,7 @@
 tasks:
     vim:
         links:
-            - [".vimrc.before.local", "vim/.vimrc.before.local"]
-            - [".vimrc.bundles.local", "vim/.vimrc.bundles.local"]
-            - [".vimrc.local", "vim/.vimrc.local"]
+            - [".vimrc", "vim/vimrc"]
     zsh:
         links:
             - [".zshrc", "zsh/.zshrc"]

@@ -3,7 +3,7 @@
 # install go 1.9.2
 #
 
-VERSION="1.9.2"
+VERSION="1.10.2"
 
 # remove old version
 if [ -d /usr/local/go/ ]; then

@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# vi: set ft=sh :
 
 detect_OS() {
     os_name=`uname -s`
