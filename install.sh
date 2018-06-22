@@ -15,8 +15,10 @@ detect_OS() {
     echo OS is $os_type
 }
 
-command -v homemaker >/dev/null 2>&1 || { echo >&2 "require homemaker but it's not installed.  Aborting."; exit 1; }
+HOMEMAKER_BIN="./bin/homemaker"
+
+command -v $HOMEMAKER_BIN >/dev/null 2>&1 || { echo >&2 "require homemaker but it's not installed.  Aborting."; exit 1; }
 
 detect_OS
 
-homemaker -verbose -task $os_type dotfiles.yaml .
+$HOMEMAKER_BIN -verbose -task $os_type dotfiles.yaml .
