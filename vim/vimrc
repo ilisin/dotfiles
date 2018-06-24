@@ -55,7 +55,7 @@ colorscheme gruvbox
 
 if has('clipboard')
     if has('unnamedplus')
-        set clipboard=unnamed,unnaamedplus
+        set clipboard=unnamed,unnamedplus
     else
         set clipboard=unnamed
     endif
