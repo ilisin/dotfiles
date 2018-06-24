@@ -41,11 +41,13 @@ Plug 'w0rp/ale'
 Plug 'shougo/neocomplete.vim'
 Plug 'honza/vim-snippets'
 
-" programing
+" language
+Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'alvan/vim-closetag'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 " }
@@ -288,6 +290,14 @@ endif
 " TagBar {
 if isdirectory(expand("~/.vim/plugged/tagbar/"))
     nnoremap <silent> <leader>t :TagbarToggle<CR>
+    let g:tagbar_type_markdown = {
+        \ 'ctagstype' : 'markdown',
+        \ 'kinds' : [
+            \ 'h:Heading_L1',
+            \ 'i:Heading_L2',
+            \ 'k:Heading_L3'
+        \ ]
+    \ }
 endif
 "}
 
@@ -330,4 +340,11 @@ map <Leader>vq :VimuxCloseRunner<CR>
 map <Leader>vx :VimuxInterruptRunner<CR>
 " Zoom the runner pane (use <bind-key> z to restore runner pane)
 map <Leader>vz :call VimuxZoomRunner()<CR>
+" }
+
+let g:vim_json_syntax_conceal = 0
+
+" markdown {
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
 " }
