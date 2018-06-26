@@ -4,9 +4,7 @@ tasks:
             - [".vimrc", "vim/vimrc"]
     zsh:
         links:
-            - [".zshrc", "zsh/.zshrc"]
-            - [".zsh_aliases", "zsh/.zsh_aliases"]
-            - [".oh-my-zsh/custom/themes/maple-red.zsh-theme", "zsh/themes/maple-red.zsh-theme"]
+            - [".zshrc", "zsh/zshrc"]
     tmux:
         links:
             - [".tmux.conf", "tmux/tmux.conf"]
