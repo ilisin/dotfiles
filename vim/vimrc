@@ -21,6 +21,7 @@ Plug 'luochen1990/rainbow'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
+Plug 'shougo/denite.nvim'
 
 " airline
 Plug 'vim-airline/vim-airline'
@@ -54,20 +55,6 @@ call plug#end()
 " }
 
 " General {
-if isdirectory(expand("~/.vim/plugged/gruvbox/"))
-    colorscheme gruvbox
-else
-    colorscheme slate
-endif
-
-if has('clipboard')
-    if has('unnamedplus')
-        set clipboard=unnamed,unnamedplus
-    else
-        set clipboard=unnamed
-    endif
-endif
-
 set background=dark             " Assume a dark background
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide the mouse cursor while typing
@@ -104,6 +91,20 @@ set expandtab                   " Tabs are spaces, not tabs
 set tabstop=4                   " An indentation every four columns
 set softtabstop=4               " Let backspace delete indent
 set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
+
+if isdirectory(expand("~/.vim/plugged/gruvbox/"))
+    colorscheme gruvbox
+else
+    colorscheme slate
+endif
+
+if has('clipboard')
+    if has('unnamedplus')
+        set clipboard=unnamed,unnamedplus
+    else
+        set clipboard=unnamed
+    endif
+endif
 
 filetype plugin indent on        " Automatically detect file types.
 syntax on                        " Syntax highlighting
