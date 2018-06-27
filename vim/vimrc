@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'tpope/vim-fugitive'
@@ -117,6 +117,7 @@ autocmd FileType html setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType json setlocal tabstop=2 shiftwidth=2 expandtab
 
 let mapleader = ',' " Replace leader to ',', default leader is '\'
+
 " }
 
 " Directory {
@@ -150,7 +151,7 @@ endif
 
 " NERDTree {
 map <C-n> :NERDTreeToggle<CR>
-nmap <leader>nt :NERDTreeFind<CR>
+nmap <leader>nf :NERDTreeFind<CR>
 
 let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
@@ -356,4 +357,38 @@ let g:vim_json_syntax_conceal = 0
 " markdown {
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
+" }
+
+" Denite {
+if isdirectory(expand("~/.vim/plugged/denite.nvim"))
+    nnoremap <silent> <leader>b :<C-u>Denite buffer -mode=normal<CR>
+    nnoremap <silent> <leader>/ :<C-u>Denite grep -no-empty -mode=normal <CR>
+    nnoremap <silent> <leader>f :<C-u>Denite file_rec<CR>
+    "nnoremap <silent> <leader>u :<C-u>Denite buffer file_old<CR>
+    nnoremap <silent> <leader>o :<C-u>Denite outline -no-quit -mode=normal<CR>
+    nnoremap <silent> <leader>h :<C-u>Denite help<CR>
+    nnoremap <silent> <leader>r :<C-u>Denite register<CR>
+    nnoremap <silent> <leader>l :<C-u>Denite line<CR>
+    nnoremap <silent> <leader>! :<C-u>Denite -resume<CR>
+
+    call denite#custom#map('insert', '<C-[>', '<denite:enter_mode:normal>', 'noremap')
+    call denite#custom#map('normal', '<C-[>', '<denite:quit>', 'noremap')
+
+    " Add custom menus
+    let s:menus = {}
+
+    let s:menus.zsh = {
+        \ 'description': 'Edit zsh configuration'
+        \ }
+    let s:menus.zsh.file_candidates = [
+        \ ['zshrc', '~/.zshrc'],
+        \ ]
+    let s:menus.vim = {
+        \ 'description': 'Edit vimrc'
+        \ }
+    let s:menus.vim.file_candidates = [
+        \ ['vimrc', '~/.vimrc'],
+        \ ]
+    call denite#custom#var('menu', 'menus', s:menus)
+endif
 " }
