@@ -2,4 +2,7 @@
     "[javascript]": {
         "editor.tabSize": 2
     },
+    "workbench.statusBar.feedback.visible": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.fontSize": 14,
 }

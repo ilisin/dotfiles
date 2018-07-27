@@ -10,10 +10,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
-"Plug 'kien/ctrlp.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/matchit.zip'
@@ -27,7 +25,7 @@ Plug 'shougo/denite.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" with tmux
+" tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'benmills/vimux-golang'
@@ -44,12 +42,23 @@ Plug 'honza/vim-snippets'
 " language
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'vim-scripts/JavaScript-Indent'
 Plug 'alvan/vim-closetag'
 Plug 'plasticboy/vim-markdown'
+Plug 'uarun/vim-protobuf'
+
+" javascript jsx
+Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'vim-scripts/JavaScript-Indent'
+Plug 'mxw/vim-jsx'
+"Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+
+" vue
+"Plug 'posva/vim-vue', { 'for': 'vue' }
+"Plug 'digitaltoad/vim-pug'
+
+" html css
+Plug 'cakebaker/scss-syntax.vim'
 
 call plug#end()
 " }
@@ -109,12 +118,16 @@ endif
 filetype plugin indent on        " Automatically detect file types.
 syntax on                        " Syntax highlighting
 
+" set file type
 autocmd BufNewFile,BufRead .eslintrc set filetype=json
 autocmd BufNewFile,BufRead .babelrc set filetype=json
+autocmd BufNewFile,BufRead *.vue setlocal filetype=vue
 
+" set tab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType json setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType vue setlocal tabstop=2 shiftwidth=2 expandtab
 
 let mapleader = ',' " Replace leader to ',', default leader is '\'
 
@@ -223,9 +236,10 @@ if isdirectory(expand("~/.vim/plugged/neocomplete.vim"))
     " Enable omni completion.
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=tern#Complete
 
     " Enable heavy omni completion.
     if !exists('g:neocomplete#sources#omni#input_patterns')
@@ -352,7 +366,9 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 map <Leader>vz :call VimuxZoomRunner()<CR>
 " }
 
+" json {
 let g:vim_json_syntax_conceal = 0
+" }
 
 " markdown {
 let g:vim_markdown_folding_disabled = 1
@@ -392,3 +408,6 @@ if isdirectory(expand("~/.vim/plugged/denite.nvim"))
     call denite#custom#var('menu', 'menus', s:menus)
 endif
 " }
+
+" vim-vue
+"let g:vue_disable_pre_processors=1
