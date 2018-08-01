@@ -8,11 +8,9 @@ call plug#begin('~/.vim/plugged')
 
 " basic
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/matchit.zip'
 Plug 'luochen1990/rainbow'
@@ -21,6 +19,11 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'shougo/denite.nvim'
 Plug 'ntpeters/vim-better-whitespace'
+
+" git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " airline
 Plug 'vim-airline/vim-airline'
@@ -35,19 +38,22 @@ Plug 'benmills/vimux-golang'
 "Plug 'fatih/molokai'
 Plug 'morhetz/gruvbox'
 
-" lint, autocomplete
+" lint
 Plug 'w0rp/ale'
-Plug 'shougo/neocomplete.vim'
 
+" autocomplete
+Plug 'shougo/neocomplete.vim'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
-" language
+" languages
 Plug 'elzr/vim-json'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'alvan/vim-closetag'
 Plug 'plasticboy/vim-markdown'
+
+" golang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'uarun/vim-protobuf'
 
 " javascript jsx
@@ -55,11 +61,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'vim-scripts/JavaScript-Indent'
 Plug 'mxw/vim-jsx'
-"Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-
-" vue
-"Plug 'posva/vim-vue', { 'for': 'vue' }
-"Plug 'digitaltoad/vim-pug'
 
 " html css
 Plug 'cakebaker/scss-syntax.vim'
@@ -291,6 +292,7 @@ endif
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " }
 
+" Snippet {
 let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
 
 " Enable neosnippet snipmate compatibility mode
@@ -301,6 +303,7 @@ if has('conceal')
 endif
 
 let g:go_snippet_engine = "neosnippet"
+" }
 
 " Ale {
 let g:ale_completion_enabled = 1
