@@ -20,6 +20,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'shougo/denite.nvim'
+Plug 'ntpeters/vim-better-whitespace'
 
 " airline
 Plug 'vim-airline/vim-airline'
@@ -310,6 +311,10 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 " }
+
+" Better Whitespace
+let g:strip_whitespace_on_save = 1
+let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help']
 
 " golang {
 let g:go_highlight_types = 1
