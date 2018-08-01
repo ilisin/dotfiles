@@ -51,6 +51,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'elzr/vim-json'
 Plug 'alvan/vim-closetag'
 Plug 'plasticboy/vim-markdown'
+Plug 'cespare/vim-toml'
 
 " golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
