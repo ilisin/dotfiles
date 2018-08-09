@@ -42,4 +42,4 @@ source $ZSH/oh-my-zsh.sh
 [[ "$TERM" == "xterm"  ]] && export TERM=xterm-256color
 
 # print system info
-command -v neofetch &> /dev/null && neofetch
+#command -v neofetch &> /dev/null && neofetch
