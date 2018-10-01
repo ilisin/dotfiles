@@ -29,6 +29,8 @@ plugins=(
     thefuck
     yarn
     vagrant
+    zsh-autosuggestions
+    composer
 )
 
 source $ZSH/oh-my-zsh.sh

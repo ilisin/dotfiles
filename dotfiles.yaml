@@ -26,7 +26,6 @@ tasks:
             - [".bashrc"]
             - [".bash_aliases"]
             - [".profile"]
-            - [".gitconfig.local", "git/gitconfig.local"]
     Mac:
         deps:
             - vim
@@ -34,7 +33,6 @@ tasks:
             - git
             - tmux
         links:
-            - [".gitconfig.local", "mac/gitconfig.local"]
             - ["Library/Application Support/Code/User/settings.json", "vscode/settings.json"]
     unknow:
         cmds:

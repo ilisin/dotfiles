@@ -52,10 +52,16 @@ Plug 'elzr/vim-json'
 Plug 'alvan/vim-closetag'
 Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
 
 " golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'uarun/vim-protobuf'
+
+" php
+"Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+"Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+"Plug '2072/php-indenting-for-vim', {'for': 'php'}
 
 " javascript jsx
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
@@ -64,6 +70,9 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascri
 
 " html css
 Plug 'cakebaker/scss-syntax.vim'
+
+" docker
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 " }
@@ -132,6 +141,7 @@ autocmd BufNewFile,BufRead *.vue setlocal filetype=vue
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType json setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType vue setlocal tabstop=2 shiftwidth=2 expandtab
 
 let mapleader = ',' " Replace leader to ',', default leader is '\'
