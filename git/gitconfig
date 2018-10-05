@@ -13,6 +13,7 @@
     quotepath = false
 	autocrlf = input
 	excludesfile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [merge]
     tool = vimdiff
@@ -25,7 +26,7 @@
     interactive = auto
     log = auto
     status = auto
-    ui = auto
+	ui = true
     pager = true
 
 [alias]
@@ -59,3 +60,15 @@
 
 [push]
     default = simple
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
