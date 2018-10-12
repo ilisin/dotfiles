@@ -59,9 +59,9 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'uarun/vim-protobuf'
 
 " php
-"Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-"Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-"Plug '2072/php-indenting-for-vim', {'for': 'php'}
+Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug '2072/php-indenting-for-vim', {'for': 'php'}
 
 " javascript jsx
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
