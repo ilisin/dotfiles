@@ -69,6 +69,7 @@ Plug 'uarun/vim-protobuf'
 " php
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'kristijanhusak/deoplete-phpactor'
 Plug '2072/php-indenting-for-vim', {'for': 'php'}
 
 " javascript jsx
