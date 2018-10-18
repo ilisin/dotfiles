@@ -46,3 +46,7 @@ ctop() {
       -v /var/run/docker.sock:/var/run/docker.sock \
       quay.io/vektorlab/ctop:latest
 }
+
+product_name() {
+    sudo dmidecode | grep "Product Name"
+}
