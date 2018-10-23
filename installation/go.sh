@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-VERSION="1.10.3"
+VERSION="1.11.1"
 
 # remove old version
 if [ -d /usr/local/go/ ]; then
@@ -14,7 +14,7 @@ rm go$VERSION.linux-amd64.tar.gz
 
 set() {
     export PATH=$PATH:/usr/local/go/bin
-    export GOPATH=$HOME/go_work
+    export GOPATH=$HOME/go
 }
 
 uninstall() {

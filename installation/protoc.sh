@@ -4,8 +4,8 @@
 # from https://github.com/google/protobuf/releases/latest
 #
 
-VERSION="3.6.0"
-PLATFORM="osx-x86_64"
+VERSION="3.6.1"
+PLATFORM="linux-x86_64"
 FILENAME="protoc-$VERSION-$PLATFORM.zip"
 
 curl -LO "https://github.com/google/protobuf/releases/download/v$VERSION/$FILENAME"

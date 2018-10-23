@@ -2,17 +2,11 @@
 # develop env configuration
 
 # set golang env
-if [ -d "$HOME/go/" ]; then
-    export GOROOT="$HOME/go"
-    export PATH="$PATH:$GOROOT/bin"
-fi
 if [ -d "/usr/local/go/" ]; then
     export GOROOT="/usr/local/go/"
     export PATH="$PATH:$GOROOT/bin"
-fi
-if [ -d "$HOME/go_work/" ]; then
-    export GOPATH="$HOME/go_work"
-    export PATH="$GOPATH/bin:$PATH"
+    export GOPATH="$HOME/go"
+    export PATH="$PATH:$GOPATH/bin"
 fi
 
 # set composer env
