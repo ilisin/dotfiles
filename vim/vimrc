@@ -233,6 +233,7 @@ endif
 
 " Deoplete {
 let g:deoplete#enable_at_startup = 1
+
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#package_dot = 1
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
@@ -285,8 +286,6 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-
-let g:go_auto_sameids = 1
 
 let g:go_fmt_command = "goimports"
 let g:go_snippet_engine = "neosnippet"
@@ -425,5 +424,13 @@ if isdirectory(expand("~/.vim/plugged/denite.nvim"))
 endif
 " }
 
-" vim-vue
-"let g:vue_disable_pre_processors=1
+" Phpactor {
+" Invoke the context menu
+nmap <Leader>mm :call phpactor#ContextMenu()<CR>
+" Invoke the navigation menu
+nmap <Leader>nn :call phpactor#Navigate()<CR>
+" Goto definition of class or class member under the cursor
+nmap <Leader>gd :call phpactor#GotoDefinition()<CR>
+" Transform the classes in the current file
+nmap <Leader>tt :call phpactor#Transform()<CR>
+" }
