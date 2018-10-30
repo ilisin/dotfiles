@@ -42,10 +42,18 @@ Plug 'morhetz/gruvbox'
 Plug 'w0rp/ale'
 
 " autocomplete
-Plug 'shougo/neocomplete.vim'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'zchee/deoplete-go', { 'do': 'make' }
 
 " languages
 Plug 'elzr/vim-json'
@@ -61,6 +69,7 @@ Plug 'uarun/vim-protobuf'
 " php
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'kristijanhusak/deoplete-phpactor'
 Plug '2072/php-indenting-for-vim', {'for': 'php'}
 
 " javascript jsx
@@ -209,87 +218,38 @@ if isdirectory(expand("~/.vim/plugged/vim-indent-guides/"))
 endif
 " }
 
-" Neo complete {
-if isdirectory(expand("~/.vim/plugged/neocomplete.vim"))
-    let g:acp_enableAtStartup = 0
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#enable_auto_delimiter = 1
-    let g:neocomplete#max_list = 25
-    let g:neocomplete#force_overwrite_completefunc = 1
+" Snippet {
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
+let g:neosnippet#enable_snipmate_compatibility = 1
 
-    " Define dictionary.
-    let g:neocomplete#sources#dictionary#dictionaries = {
-        \ 'default' : '',
-        \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-    " Define keyword.
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
-    endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-    imap <C-k> <Plug>(neosnippet_expand_or_jump)
-    smap <C-k> <Plug>(neosnippet_expand_or_jump)
-
-    " <C-k> Complete Snippet
-    " <C-k> Jump to next snippet point
-    imap <silent><expr><C-k> neosnippet#expandable() ?
-                \ "\<Plug>(neosnippet_expand_or_jump)" : (pumvisible() ?
-                \ "\<C-e>" : "\<Plug>(neosnippet_expand_or_jump)")
-    smap <TAB> <Right><Plug>(neosnippet_jump_or_expand)
-
-    " Plugin key-mappings.
-    inoremap <expr><C-g>     neocomplete#undo_completion()
-    inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-    " <CR> close popup and save indent or expand snippet
-    inoremap <expr><CR> neosnippet#expandable() ?
-        \ neosnippet#mappings#expand_or_jump_impl() : pumvisible() ? neocomplete#close_popup() : "\<CR>"
-
-    " <C-h>, <BS>: close popup and delete backword char.
-    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><C-y> neocomplete#smart_close_popup()
-
-    " <TAB>: completion.
-    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-
-    " Courtesy of Matteo Cavalleri
-
-    function! CleverTab()
-        if pumvisible()
-            return "\<C-n>"
-        endif
-        let substr = strpart(getline('.'), 0, col('.') - 1)
-        let substr = matchstr(substr, '[^ \t]*$')
-        if strlen(substr) == 0
-            " nothing to match on empty string
-            return "\<Tab>"
-        else
-            " existing text matching
-            if neosnippet#expandable_or_jumpable()
-                return "\<Plug>(neosnippet_expand_or_jump)"
-            else
-                return neocomplete#start_manual_complete()
-            endif
-        endif
-    endfunction
-
-    imap <expr> <Tab> CleverTab()
-
-    " Enable heavy omni completion.
-    if !exists('g:neocomplete#sources#omni#input_patterns')
-        let g:neocomplete#sources#omni#input_patterns = {}
-    endif
-    let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-    let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+if has('conceal')
+    set conceallevel=2 concealcursor=niv
 endif
+
+" }
+
+" Deoplete {
+let g:deoplete#enable_at_startup = 1
+
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#package_dot = 1
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+" SuperTab like snippets' behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+    \ "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+	\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+inoremap <expr><C-h> deolete#mappings#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
+
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }
 
 " Enable omni completion {
@@ -302,19 +262,6 @@ endif
     autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " }
 
-" Snippet {
-let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
-
-" Enable neosnippet snipmate compatibility mode
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-if has('conceal')
-    set conceallevel=2 concealcursor=i
-endif
-
-let g:go_snippet_engine = "neosnippet"
-" }
-
 " Ale {
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'never'
@@ -325,9 +272,10 @@ let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 " }
 
-" Better Whitespace
+" Better Whitespace {
 let g:strip_whitespace_on_save = 1
 let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help']
+" }
 
 " golang {
 let g:go_highlight_types = 1
@@ -338,7 +286,10 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
 let g:go_fmt_command = "goimports"
+let g:go_snippet_engine = "neosnippet"
+
 "au FileType go nmap <Leader>s <Plug>(go-implements)
 "au FileType go nmap <Leader>i <Plug>(go-info)
 "au FileType go nmap <Leader>e <Plug>(go-rename)
@@ -473,5 +424,13 @@ if isdirectory(expand("~/.vim/plugged/denite.nvim"))
 endif
 " }
 
-" vim-vue
-"let g:vue_disable_pre_processors=1
+" Phpactor {
+" Invoke the context menu
+nmap <Leader>mm :call phpactor#ContextMenu()<CR>
+" Invoke the navigation menu
+nmap <Leader>nn :call phpactor#Navigate()<CR>
+" Goto definition of class or class member under the cursor
+nmap <Leader>gd :call phpactor#GotoDefinition()<CR>
+" Transform the classes in the current file
+nmap <Leader>tt :call phpactor#Transform()<CR>
+" }
