@@ -3,7 +3,7 @@
 
 [user]
 	name = nyo
-	email = billy31210@gmail.com
+	email = nyo4rdace@gmail.com
 
 [include]
     path = ~/.gitconfig.local
