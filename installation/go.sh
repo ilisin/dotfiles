@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-VERSION="1.11.1"
+VERSION="1.11.2"
 
 # remove old version
 if [ -d /usr/local/go/ ]; then
