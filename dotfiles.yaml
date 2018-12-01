@@ -21,11 +21,11 @@ tasks:
             - zsh
             - git
             - tmux
-            - neofetch
+            #- neofetch
         links:
-            - [".bashrc"]
-            - [".bash_aliases"]
-            - [".profile"]
+            #- [".bashrc"]
+            #- [".bash_aliases"]
+            #- [".profile"]
     Mac:
         deps:
             - vim
