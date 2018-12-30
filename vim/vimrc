@@ -61,6 +61,7 @@ Plug 'alvan/vim-closetag'
 Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
+Plug 'smancill/conky-syntax.vim'
 
 " golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
@@ -388,6 +389,7 @@ let g:vim_json_syntax_conceal = 0
 " markdown {
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_conceal = 0
 " }
 
 " Denite {
