@@ -94,13 +94,13 @@ set mousehide                   " Hide the mouse cursor while typing
 set showcmd                     " Show partial commands in status line and
 set ruler                       " Show the ruler
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
-set laststatus=2
+set laststatus=2                " 2: always
 set updatetime=100
 
 set showmode
 set backspace=indent,eol,start  " Backspace for dummies
 set linespace=0                 " No extra spaces between rows
-set cursorline
+set cursorline                  " Highlight the screen line of the cursor with CursorLine
 set number                      " Line numbers on
 set showmatch                   " Show matching brackets/parenthesis
 set incsearch                   " Find as you type search
@@ -155,6 +155,9 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType vue setlocal tabstop=2 shiftwidth=2 expandtab
 
 let mapleader = ',' " Replace leader to ',', default leader is '\'
+
+" Clean searching highlight
+nnoremap \ :noh<cr>
 
 " }
 
@@ -268,11 +271,24 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " Ale {
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'never'
+
+let g:ale_linters = {
+  \ 'php': ['phpcs'],
+  \ }
 let g:ale_fixers = {
   \ 'javascript': ['eslint']
   \ }
+let g:ale_php_phpcs_standard = 'PSR1,PSR2'
+
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '•'
+
+let g:ale_echo_msg_error_str = '✖ Error'
+let g:ale_echo_msg_warning_str = '⚠ Warning'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " }
 
 " Better Whitespace {
