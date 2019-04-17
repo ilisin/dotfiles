@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# https://github.com/tmux/tmux/wiki
 
 VERSION=2.8
 sudo apt -y remove tmux

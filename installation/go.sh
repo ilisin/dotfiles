@@ -1,7 +1,8 @@
 #!/bin/bash
 #
+# srouce: https://golang.org/dl/
 
-VERSION="1.11.2"
+VERSION="1.12.4"
 
 # remove old version
 if [ -d /usr/local/go/ ]; then
