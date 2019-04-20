@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # my option: bira, darkblood, gnzh, funky
 # custom Themes: bira-red
-ZSH_THEME="maple-red"
+ZSH_THEME="twoline"
 
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -29,7 +29,6 @@ plugins=(
     thefuck
     yarn
     vagrant
-    zsh-autosuggestions
     composer
 )
 
