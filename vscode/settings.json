@@ -5,4 +5,10 @@
     "workbench.statusBar.feedback.visible": false,
     "vsicons.dontShowNewVersionMessage": true,
     "editor.fontSize": 14,
+    "workbench.iconTheme": "vscode-icons",
+    "editor.tabSize": 2,
+    "window.zoomLevel": 0,
+    "[go]": {
+        "editor.tabSize": 4
+    },
 }
