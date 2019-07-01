@@ -2,7 +2,7 @@
 #
 # https://github.com/tmux/tmux/wiki
 
-VERSION=2.8
+VERSION=2.9
 sudo apt -y remove tmux
 sudo apt -y install wget tar automake build-essential libevent-dev libncurses-dev
 wget https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
