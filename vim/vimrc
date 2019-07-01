@@ -261,6 +261,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }
 
 " Enable omni completion {
+    autocmd FileType php setlocal omnifunc=phpactor#Complete
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -414,11 +415,27 @@ let g:vim_markdown_conceal = 0
 
 " Denite {
 if isdirectory(expand("~/.vim/plugged/denite.nvim"))
-    nnoremap <silent> <leader>b :<C-u>Denite buffer -mode=normal<CR>
-    nnoremap <silent> <leader>/ :<C-u>Denite grep -no-empty -mode=normal <CR>
+    autocmd FileType denite call s:denite_my_settings()
+    function! s:denite_my_settings() abort
+      nnoremap <silent><buffer><expr> <CR>
+      \ denite#do_map('do_action')
+      nnoremap <silent><buffer><expr> d
+      \ denite#do_map('do_action', 'delete')
+      nnoremap <silent><buffer><expr> p
+      \ denite#do_map('do_action', 'preview')
+      nnoremap <silent><buffer><expr> q
+      \ denite#do_map('quit')
+      nnoremap <silent><buffer><expr> i
+      \ denite#do_map('open_filter_buffer')
+      nnoremap <silent><buffer><expr> <Space>
+      \ denite#do_map('toggle_select').'j'
+    endfunction
+
+    nnoremap <silent> <leader>b :<C-u>Denite buffer<CR>
+    nnoremap <silent> <leader>/ :<C-u>Denite grep -no-empty<CR>
     nnoremap <silent> <leader>f :<C-u>Denite file_rec<CR>
     "nnoremap <silent> <leader>u :<C-u>Denite buffer file_old<CR>
-    nnoremap <silent> <leader>o :<C-u>Denite outline -no-quit -mode=normal<CR>
+    nnoremap <silent> <leader>o :<C-u>Denite outline -no-quit<CR>
     nnoremap <silent> <leader>h :<C-u>Denite help<CR>
     nnoremap <silent> <leader>r :<C-u>Denite register<CR>
     nnoremap <silent> <leader>l :<C-u>Denite line<CR>
