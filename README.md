@@ -1,37 +1,27 @@
 # Dotfiles
 
-My dotfiles.
+nyogjtrc's dotfiles. managed by Homemaker.
 
 ---
 
 ## Prepare Install
 
 ```
-sudo apt update
-sudo apt install -y git
+wget -qO- https://raw.githubusercontent.com/nyogjtrc/dotfiles/master/installation/basic.sh | bash
 ```
 
-via ssh:
+## Get dotfiles repo
 ```
 git clone git@github.com:nyogjtrc/dotfiles.git .dotfiles
-cd .dotfiles
 ```
 
-via https:
-```
-git clone https://github.com/nyogjtrc/dotfiles.git .dotfiles
-cd .dotfiles
-```
-
-```
-./pre_install.sh
-```
-
-## Install
+## Install dotfiles via Homemaker
 
 ```
 ./install
 ```
+
+---
 
 ## What's inside?
 
