@@ -50,3 +50,17 @@ ctop() {
 product_name() {
     sudo dmidecode | grep "Product Name"
 }
+
+
+open_monitor() {
+    tmux new-window -n monitor
+
+    tmux split-window -h -t monitor
+    tmux split-window -v -t monitor
+    tmux split-window -v -t monitor
+
+    tmux send-keys -t 1 'htop' C-j
+    tmux send-keys -t 2 'watch sensors' C-j
+    tmux send-keys -t 3 'ctop' C-j
+    tmux send-keys -t 4 'watch uptime' C-j
+}
