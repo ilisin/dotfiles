@@ -2,7 +2,7 @@
 #
 # srouce: https://golang.org/dl/
 
-VERSION="1.12.4"
+VERSION="1.12.7"
 
 # remove old version
 if [ -d /usr/local/go/ ]; then
@@ -15,7 +15,6 @@ rm go$VERSION.linux-amd64.tar.gz
 
 set() {
     export PATH=$PATH:/usr/local/go/bin
-    export GOPATH=$HOME/go
 }
 
 uninstall() {
