@@ -11,4 +11,14 @@
     "[go]": {
         "editor.tabSize": 4
     },
+    "editor.fontLigatures": true,
+    "vim.hlsearch": true,
+    "vim.leader": ",",
+    "vim.useSystemClipboard": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "vim.statusBarColorControl": true,
 }
