@@ -64,3 +64,11 @@ open_monitor() {
     tmux send-keys -t 3 'ctop' C-j
     tmux send-keys -t 4 'watch uptime' C-j
 }
+
+now() {
+    date +%s
+}
+
+to_date() {
+    date -Iseconds --date=@$1
+}
