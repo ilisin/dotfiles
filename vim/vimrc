@@ -85,6 +85,9 @@ Plug 'cakebaker/scss-syntax.vim'
 " docker
 Plug 'ekalinin/Dockerfile.vim'
 
+" ansible
+Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; ./generate.py' }
+
 call plug#end()
 " }
 
