@@ -17,6 +17,7 @@ download_homemaker() {
 
     echo "Install homemaker to /usr/local/bin"
     sudo mv -f /tmp/$FOLDER_NAME/homemaker /usr/local/bin
+    rm -r /tmp/homemaker.tar.gz /tmp/$FOLDER_NAME
 }
 
 test_homemaker() {
