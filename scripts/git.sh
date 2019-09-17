@@ -1,8 +1,6 @@
 #!/bin/bash
 
-DIR=$(dirname $0)
-
-# prepare for install dotfiles
+# install git
 
 install_git() {
     if [[ 'Darwin' == $(uname -s) ]]; then
@@ -12,11 +10,4 @@ install_git() {
     fi
 }
 
-
-# install homemaker
-install_homemaker() {
-    $DIR/homemaker.sh
-}
-
 install_git
-install_homemaker
