@@ -4,21 +4,24 @@ nyogjtrc's dotfiles. managed by Homemaker.
 
 ---
 
-## Prepare Install
+## Install dotfiles
+
+### Get dotfiles repo
 
 ```
-wget -qO- https://raw.githubusercontent.com/nyogjtrc/dotfiles/master/installation/basic.sh | bash
+$ git clone git@github.com:nyogjtrc/dotfiles.git .dotfiles
 ```
 
-## Get dotfiles repo
-```
-git clone git@github.com:nyogjtrc/dotfiles.git .dotfiles
-```
-
-## Install dotfiles via Homemaker
+### Install homemaker
 
 ```
-./install
+$ ./scripts/homemaker.sh
+```
+
+### Install dotfiles via Homemaker
+
+```
+$ ./dotfiles.sh
 ```
 
 ---
