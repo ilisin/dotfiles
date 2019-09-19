@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brew install macvim --with-lua --with-override-system-vi
+brew install vim --with-override-system-vi
 brew tap universal-ctags/universal-ctags
 brew install --HEAD universal-ctags
 
