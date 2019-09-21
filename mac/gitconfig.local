@@ -1,7 +1,0 @@
-# vim: set ft=gitconfig:
-
-[user]
-	name = nyo
-    email = rnyo2189@cchntek.com
-[url "git@git.cchntek.com:"]
-	insteadOf = http://git.cchntek.com/
