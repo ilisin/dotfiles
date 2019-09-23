@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brew cask install iterm2 spotify
+brew cask install spotify
 brew cask install evernote boostnote
 brew cask install google-chrome firefox
 brew cask install telegram-desktop skype caprine
