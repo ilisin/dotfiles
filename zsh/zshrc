@@ -8,6 +8,9 @@ export ZSH=$HOME/.oh-my-zsh
 # my option: bira, darkblood, gnzh, funky
 # custom Themes: bira-red
 ZSH_THEME="twoline"
+if [[ 'Darwin' == $(uname -s) ]]; then
+    ZSH_THEME="pi"
+fi
 
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
