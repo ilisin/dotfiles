@@ -1,10 +1,15 @@
 # mac.zsh
-# script collection for mac
+# config and script collection for mac
 
-
-if [ "$(uname)" != "Darwin" ]; then
+if [ "$(uname -s)" != "Darwin" ]; then
     return
 fi
+
+# fix gnu ls no color
+if [[ -z "$LS_COLORS" ]]; then
+  (( $+commands[dircolors] )) && eval "$(dircolors -b)"
+fi
+ls --color -d . &>/dev/null && alias ls='ls --color=tty'
 
 notify() {
     osascript -e "display notification \"$1\" with title \"Notification!\""
