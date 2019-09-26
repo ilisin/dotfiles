@@ -2,11 +2,9 @@
 # develop env configuration
 
 # set golang env
-if [ -d "/usr/local/go/" ]; then
-    export GOROOT="/usr/local/go/"
-    export PATH="$PATH:$GOROOT/bin"
-    export GOPATH="$HOME/go"
-    export PATH="$PATH:$GOPATH/bin"
+if [ -e "/usr/local/bin/go" ]; then
+    export PATH="$PATH:$(go env GOROOT)/bin"
+    export PATH="$PATH:$(go env GOPATH)/bin"
     export GO111MODULE=on
 fi
 
