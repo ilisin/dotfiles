@@ -15,7 +15,7 @@ $ git clone git@github.com:nyogjtrc/dotfiles.git .dotfiles
 ### Install homemaker
 
 ```
-$ ./scripts/homemaker.sh
+$ ./installation/homemaker.sh
 ```
 
 ### Install dotfiles via Homemaker
