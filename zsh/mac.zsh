@@ -14,3 +14,15 @@ ls --color -d . &>/dev/null && alias ls='ls --color=tty'
 notify() {
     osascript -e "display notification \"$1\" with title \"Notification!\""
 }
+
+# gnu coreutils
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# gnu sed
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# gnu tar
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+
+# gnu which
+export PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
