@@ -88,6 +88,9 @@ Plug 'ekalinin/Dockerfile.vim'
 " ansible
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; ./generate.py' }
 
+" python
+Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
+
 call plug#end()
 " }
 
@@ -287,7 +290,8 @@ let g:ale_linters = {
   \ 'php': ['phpcs'],
   \ }
 let g:ale_fixers = {
-  \ 'javascript': ['eslint']
+  \   'javascript': ['eslint'],
+  \   'python': ['yapf', 'isort'],
   \ }
 let g:ale_php_phpcs_standard = 'PSR1,PSR2'
 
