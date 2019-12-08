@@ -4,6 +4,8 @@
 # set golang env
 if [ -d "/usr/local/go/" ]; then
     export PATH="$PATH:/usr/local/go/bin"
+    export PATH="$PATH:$(go env GOPATH)/bin"
+    export GO111MODULE=on
 fi
 if [ -e "/usr/local/bin/go" ]; then
     export PATH="$PATH:$(go env GOROOT)/bin"
