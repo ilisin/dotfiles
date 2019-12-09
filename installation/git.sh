@@ -1,11 +1,11 @@
 #!/bin/bash
 
 linux_install() {
-    sudo apt install -y git
+    sudo apt install -y git git-lfs
 }
 
 darwin_install() {
-    brew install git
+    brew install git git-lfs
 }
 
 case "$(uname -s)" in
